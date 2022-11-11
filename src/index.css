@@ -1,13 +1,142 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  background-color: rgb(0, 128, 128);
+
+  font-family: "Karla";
+  font-style: normal;
+  color: #293264;
+}
+
+h1 {
+  margin: 10px;
+
+  font-weight: 700;
+  font-size: 31.25px;
+  line-height: 37px;
+}
+
+h2 {
+  width: 400px;
+  
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+p {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+hr {
+  margin: 0px;
+  margin-bottom: 20px;
+  width: 400px;
+  border: 1px solid #dbdef0;
+}
+
+.app {
+  margin: 20px auto;
+  width: 550px;
+  min-height: 550px;
+  background-image: url("./images/intro-page.png");
+  background-size: cover;
+  box-shadow: 10px 10px 10px rgb(0, 71, 71);
+  border-radius: 10px;
+}
+
+.bg {
+  position: relative;
+  display: inline;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.welcome {
+  border: 1px solid;
+  width: 100%;
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-btn {
+  width: 193px;
+  height: 52px;
+  background: #4d5b9e;
+  border-radius: 15px;
+
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #f5f7fb;
+}
+
+.welcome-btne:focus {
+  outline: none;
+}
+
+.welcome-btn:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+.quiz-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.btn-check {
+  width: 120px;
+  height: 35px;
+  margin-bottom: 25px;
+  background: #4d5b9e;
+  border-radius: 10px;
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 12px;
+  text-align: center;
+  border: none;
+  color: #f5f7fb;
+}
+
+.answers {
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 13px;
+}
+
+.btn-answer {
+  min-width: 65px;
+  min-height: 21px;
+  margin-bottom: 15px;
+
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+  background-color: transparent;
+  border: 1.5px solid #4d5b9e;
+  border-radius: 8px;
+}
+
+.btn-check:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }

@@ -1,9 +1,9 @@
 import React from "react";
+import { nanoid } from "nanoid";
 
 export default function Question(props) {
-  /**
-   * Helper-function replace encoded characters
-   */
+  //Helper-function replace encoded characters
+
   function decode(string) {
     return String(string)
       .replace(/&amp;/g, "&")
@@ -13,32 +13,31 @@ export default function Question(props) {
       .replace(/&#039;/g, "'");
   }
 
-  // category: "Entertainment: Television",
-  // type: "multiple",
-  // difficulty: "easy",
-  // question:
-  //   "How many seasons did the Sci-Fi television show &quot;Stargate Atlantis&quot; have?",
-  // correct_answer: "5",
-  // incorrect_answers: ["10", "2", "7"],
-
   const answerElements = [];
 
-  for (let i = 1; i < 5; i++) {
-    answerElements.push(<button className={`btn-answer ${i}`}>
-      {i === 1 ? decode(props.data.correct_answer) : decode(props.data.incorrect_answers[i - 2])}
-    </button>);
+  for (let i = 1; i <= 4; i++) {
+    answerElements.push(
+      <div key={nanoid()}>
+        <input 
+        type="radio" 
+        id={`answer${props.id}${i}`} 
+        name={`answers${props.id}`}
+        />
+        <label 
+        htmlFor={`answer${props.id}${i}`} 
+        >
+          {i === 1
+            ? decode(props.correctAnswer)
+            : decode(props.incorrectAnswers[i - 2])}
+        </label>
+      </div>
+    );
   }
 
   return (
     <div className="question">
-      <h2>{decode(props.data.question)}</h2>
-      <div className="answers">
-      {
-        props.data.type === "multiple" ?
-      answerElements :
-      (<div><input type="radio"></input><input type="radio"></input></div>)
-      }
-      </div>
+      <h2>{decode(props.question)}</h2>
+      <div className="answers-wrapper">{answerElements}</div>
       <hr />
     </div>
   );

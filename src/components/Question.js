@@ -1,7 +1,7 @@
 import React from "react";
 import { nanoid } from "nanoid";
 
-export default function Question(props) {
+export default function Question(props) {  
   //Helper-function replace encoded characters
 
   function decode(string) {
@@ -10,25 +10,26 @@ export default function Question(props) {
       .replace(/&gt;/g, ">")
       .replace(/&lt;/g, "<")
       .replace(/&quot;/g, '"')
-      .replace(/&#039;/g, "'");
+      .replace(/&#039;/g, "'")
+      .replace(/&Uuml;/g, "Ü");
   }
 
   const answerElements = [];
 
   for (let i = 1; i <= 4; i++) {
     answerElements.push(
-      <div key={nanoid()}>
+      <div key={nanoid()} className="answer">
         <input 
         type="radio" 
         id={`answer${props.id}${i}`} 
         name={`answers${props.id}`}
         />
-        <label 
-        htmlFor={`answer${props.id}${i}`} 
+        <label
+        id={`ans${props.id}${i}`}
+        htmlFor={`answer${props.id}${i}`}
+        className={props.correctAnswer === props.answersArray[i - 1] ? "correct" : "incorrect"} 
         >
-          {i === 1
-            ? decode(props.correctAnswer)
-            : decode(props.incorrectAnswers[i - 2])}
+        {decode(props.answersArray[i - 1])}
         </label>
       </div>
     );

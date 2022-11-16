@@ -105,8 +105,10 @@ hr {
   width: 120px;
   height: 35px;
   margin-bottom: 25px;
+
   background: #4d5b9e;
   border-radius: 10px;
+
   font-family: "Inter";
   font-weight: 600;
   font-size: 11px;
@@ -114,6 +116,10 @@ hr {
   text-align: center;
   border: none;
   color: #f5f7fb;
+}
+
+.btn-check:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
 
 .answers-wrapper {
@@ -142,7 +148,7 @@ hr {
   text-align: center;
 
   background-color: transparent;
-  border: 1.5px solid #4d5b9e;
+  border: 1px solid #4d5b9e;
   border-radius: 8px;
   cursor: pointer;
 }
@@ -153,8 +159,6 @@ hr {
 
 .answers-wrapper input[type="radio"]:checked + label {
   background: #d6dbf5;
+  border: none;
 }
 
-.btn-check:active {
-  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
-}
